@@ -15,6 +15,20 @@ public class FlightRepositoryImpl {
             "select * from flight where ?";
 
 
+    public void insertFlight(String name) throws SQLException {
 
+        Connection connection = ConnectionImpl.getConnection();
+        PreparedStatement statement = connection.prepareStatement(INSERT_FLIGHT);
+        statement.setString(2,name);
+
+      statement.executeUpdate();
+
+    }
+    public void selectFlightOf(String name)throws SQLException{
+
+        Connection connection = ConnectionImpl.getConnection();
+        PreparedStatement statement = connection.prepareStatement(GET_FLIGHT_OF_AIRPORTS);
+
+    }
 
 }

@@ -7,8 +7,6 @@ import projectNomber1.model.Flight;
 import projectNomber1.service.AirportService;
 import projectNomber1.service.FlightService;
 import projectNomber1.service.FlightServiceImpl;
-
-
 import java.io.IOException;
 import java.sql.SQLException;
 

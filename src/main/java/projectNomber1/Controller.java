@@ -25,11 +25,18 @@ public class Controller {
 
     public void start() {
 
+Airports airports = null;
+Flight flight  = null;
+
         while (true) {
 
+
+
             boolean cont = true;
+
             while (cont) {
-                cont = mainProcess(Airports,Flight);
+
+                cont = mainProcess(airports,flight);
 
             }
         }

@@ -14,5 +14,6 @@ public class FlightRepositoryImpl implements FlightRepository {
         Connection connection = ConnectionImpl.getConnection();
         PreparedStatement statement = connection.prepareStatement(INSERT_FLIGHT);
         statement.executeUpdate();
+
     }
 }

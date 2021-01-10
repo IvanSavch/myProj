@@ -24,7 +24,7 @@ private static final String GET_FLIGHTS_IN_AIRPORT =
         statement.setString(2,city);
         statement.setString(3,country);
         ResultSet resultSet = statement.executeQuery();
-        resultSet.next();
+        if (!resultSet.next()) throw new SQLException("No such airport");
     }
 
     @Override
@@ -35,7 +35,7 @@ private static final String GET_FLIGHTS_IN_AIRPORT =
         statement.setString(2,city);
         statement.setString(3,country);
         ResultSet resultSet = statement.executeQuery();
-        resultSet.next();
+        if (!resultSet.next()) throw new SQLException("No such airport");
     }
 }
 

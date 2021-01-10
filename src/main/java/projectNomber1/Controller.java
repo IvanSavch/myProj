@@ -65,9 +65,7 @@ public class Controller {
                 case "2":
                     try {
                         String airportName = ioInterface.readStringValue();
-                        String city = ioInterface.readStringValue();
-                        String country = ioInterface.readStringValue();
-                        airportsService.getFlightOfAirport(airportName, city, country);
+                        airportsService.getFlightOfAirport(airportName);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
                     }
@@ -75,9 +73,7 @@ public class Controller {
                 case "3":
                     try {
                         String airportName = ioInterface.readStringValue();
-                        String city = ioInterface.readStringValue();
-                        String country = ioInterface.readStringValue();
-                        airportsService.getFlightInAirports(airportName, city, country);
+                        airportsService.getFlightInAirports(airportName);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
                     }

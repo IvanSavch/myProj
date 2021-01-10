@@ -16,12 +16,12 @@ public class AirportsServiceImpl implements AirportService {
     }
 
     @Override
-    public void getFlightOfAirport(String airportName, String city, String country) throws SQLException {
-        airportRepository.getFlightOfAirport(airportName, city, country);
+    public void getFlightOfAirport(String airportName) throws SQLException {
+        airportRepository.getFlightOfAirport(airportName);
     }
 
     @Override
-    public void getFlightInAirports(String airportName, String city, String country) throws SQLException {
-        airportRepository.getFlightInAirports(airportName, city, country);
+    public void getFlightInAirports(String airportName) throws SQLException {
+        airportRepository.getFlightInAirports(airportName);
     }
 }

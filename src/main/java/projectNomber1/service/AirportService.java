@@ -6,6 +6,6 @@ import java.sql.SQLException;
 
 public interface AirportService {
 
-    void getFlightOfAirport(Airports airports) throws SQLException;
-    void getFlightInAirports(Airports airports) throws SQLException;
+    void getFlightOfAirport(String airportName,String city,String country) throws SQLException;
+    void getFlightInAirports(String airportName, String city, String country) throws SQLException;
 }

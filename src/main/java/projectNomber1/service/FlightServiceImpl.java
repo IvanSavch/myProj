@@ -1,6 +1,5 @@
 package projectNomber1.service;
 
-import projectNomber1.model.Flight;
 import projectNomber1.repository.FlightRepository;
 import projectNomber1.repository.FlightRepositoryImpl;
 
@@ -16,9 +15,7 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public void extractFlight(Flight flight) throws SQLException {
-
-        flightRepository.extractFlight();
-
+    public void addFlight(String departureAirport, String departureTime, String arrivalAirport, String arrivalTime) throws SQLException {
+        flightRepository.addFlight(departureAirport,departureTime,arrivalAirport,arrivalTime);
     }
 }

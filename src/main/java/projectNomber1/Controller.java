@@ -1,16 +1,18 @@
 package projectNomber1;
 
+
 import projectNomber1.io.ConsoleIO;
 import projectNomber1.io.IOInterface;
-import projectNomber1.model.Airports;
-import projectNomber1.model.Flight;
 import projectNomber1.service.AirportService;
+import projectNomber1.service.AirportsServiceImpl;
 import projectNomber1.service.FlightService;
 import projectNomber1.service.FlightServiceImpl;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
 public class Controller {
+
 
     private final FlightService flightService;
     private final IOInterface ioInterface;
@@ -19,31 +21,20 @@ public class Controller {
     public Controller() {
         this.flightService = new FlightServiceImpl();
         this.ioInterface = new ConsoleIO();
-        this.airportsService = null;
-
+        this.airportsService = new AirportsServiceImpl();
     }
 
     public void start() {
 
-Airports airports = null;
-Flight flight  = null;
 
-        while (true) {
-
-
-
-            boolean cont = true;
-
-            while (cont) {
-
-                cont = mainProcess(airports,flight);
-
-            }
+        boolean cont = true;
+        while (cont) {
+            cont = mainProcess();
         }
     }
 
 
-    private boolean mainProcess(Airports airports, Flight flight) {
+    private boolean mainProcess() {
         System.out.println(IOInterface.MENU_LEGEND);
         String input = "";
         try {
@@ -54,22 +45,39 @@ Flight flight  = null;
         try {
             switch (input) {
                 case "1":
+                    try {
+                        String departAirportCode = ioInterface.readStringValue();
+                        String departDate = ioInterface.readStringValue();
+                        String arrivalAirportCode = ioInterface.readStringValue();
+                        String arrivalDate = ioInterface.readStringValue();
+                        flightService.addFlight(departAirportCode, departDate, arrivalAirportCode, arrivalDate);
+                        if (arrivalDate == null || departDate == null) {
+                            System.out.println("введите дату ");
+                        }
+                        if (departAirportCode == null || arrivalAirportCode == null) {
+                            System.out.println("введите код аэропорта ");
+                        }
 
-                    flightService.extractFlight(flight);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case "2":
                     try {
-                        String flightOfAirports = ioInterface.readStringValue();
-                        assert airportsService != null;
-                        airportsService.getFlightOfAirport(airports);
+                        String airportName = ioInterface.readStringValue();
+                        String city = ioInterface.readStringValue();
+                        String country = ioInterface.readStringValue();
+                        airportsService.getFlightOfAirport(airportName, city, country);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
                     }
                     break;
                 case "3":
                     try {
-                        String flightInAirports = ioInterface.readStringValue();
-                        airportsService.getFlightInAirports(airports);
+                        String airportName = ioInterface.readStringValue();
+                        String city = ioInterface.readStringValue();
+                        String country = ioInterface.readStringValue();
+                        airportsService.getFlightInAirports(airportName, city, country);
                     } catch (Exception e) {
                         System.err.println(e.getMessage());
                     }

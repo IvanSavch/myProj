@@ -4,6 +4,6 @@ import java.sql.SQLException;
 
 public interface FlightRepository {
 
-    void extractFlight() throws SQLException;
+    void addFlight(String departureAirport, String departureTime, String arrivalAirport, String arrivalTime) throws SQLException;
 
 }

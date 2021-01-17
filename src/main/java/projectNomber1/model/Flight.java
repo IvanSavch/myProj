@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -15,8 +15,8 @@ public class Flight {
 
     private int id;
     private Airports departureAirport;
-    private LocalDateTime departureTime;
+    private Date departureTime;
     private Airports arrivalAirport;
-    private LocalDateTime arrivalTime;
+    private Date arrivalTime;
 
 }

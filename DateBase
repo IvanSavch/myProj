@@ -4,19 +4,19 @@ use myProject;
 create table flight (
       id int primary key auto_increment,
 aircraft_Number int not null,
-departure_Airplane_id int not null,
+departure_Airport_id int not null,
 departure_Time datetime not null default now(),
 arrival_Airport_id int not null,
 arrival_Time datetime not null,
-foreign key (departureAirplane_id) references airports(id),
-foreign key (arrivalAirport_id) references airports(id)
+foreign key (departure_Airplane_id) references airports(id),
+foreign key (arrival_Airport_id) references airports(id)
 );
 
 create table airports(
 id int primary key auto_increment,
 airport_Name varchar(50) not null,
 city varchar(50) not null,
-county varchar(50) not null
+country varchar(50) not null
 );
 Insert into airports value (null,'MSK','Moskow','Russia'),
 						   (null,'BRL','Minsk','Belarus');

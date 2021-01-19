@@ -14,9 +14,9 @@ public class Flight {
 
 
     private int id;
-    private Airports departureAirport;
+    private int departureAirport;
     private Date departureTime;
-    private Airports arrivalAirport;
+    private int arrivalAirport;
     private Date arrivalTime;
 
 }

@@ -21,3 +21,13 @@ county varchar(50) not null
 Insert into airports value (null,'MSK','Moskow','Russia'),
 						   (null,'BRL','Minsk','Belarus');
 insert into flight value(null,1123,1,'2020-12-29',3,'2021-3-12');
+
+------------------------------------------------------------------
+Insert into airports value (null,'MSK','Moskow','Russia'),
+
+						   (null,'BRL','Minsk','Belarus');
+insert into flight value(1,1124,1,'2020-12-29',2,'2021-3-12');
+Insert into airports value (null,'ISL','Reykjavik','Island');
+select * from flight;
+select * from airports;
+insert into flight value(null,1125,1,'2021-02-02',3,'2021-02-07');

@@ -24,4 +24,9 @@ public class AirportsServiceImpl implements AirportService {
     public void getFlightInAirports(String airportName) throws SQLException {
         airportRepository.getFlightInAirports(airportName);
     }
+
+    @Override
+    public void getIdAirport(String airport) throws SQLException {
+        airportRepository.getIdAirports(airport);
+    }
 }

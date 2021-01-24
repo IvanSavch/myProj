@@ -8,4 +8,5 @@ public interface AirportService {
 
     void getFlightOfAirport(String airportName) throws SQLException;
     void getFlightInAirports(String airportName) throws SQLException;
+    void getIdAirport(String airport) throws SQLException;
 }

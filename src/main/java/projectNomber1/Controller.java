@@ -78,6 +78,15 @@ public class Controller {
                         System.err.println(e.getMessage());
                     }
                     break;
+                case "4":
+                    try
+                    {
+                        String airportName = ioInterface.readStringValue();
+                        airportsService.getIdAirport(airportName);
+                    } catch (IOException e) {
+                        System.err.println(e.getMessage());
+                    }
+                    break;
                 case "e":
                     return false;
                 default:

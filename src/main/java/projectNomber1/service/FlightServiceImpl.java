@@ -18,4 +18,5 @@ public class FlightServiceImpl implements FlightService {
     public void addFlight(String departureAirport, String departureTime, String arrivalAirport, String arrivalTime) throws SQLException {
         flightRepository.addFlight(departureAirport,departureTime,arrivalAirport,arrivalTime);
     }
+
 }

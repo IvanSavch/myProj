@@ -27,9 +27,9 @@ public class AirportRepositoryImpl implements AirportRepository {
         while (resultSet.next()) {
 
             int id = resultSet.getInt("id");
-            int departureAirport = resultSet.getInt("depAirport");
+            String departureAirport = resultSet.getString("depAirport");
             Date departureTime = resultSet.getDate("departure_Time");
-            int arrivalAirport = resultSet.getInt("arrivalAirport");
+            String arrivalAirport = resultSet.getString("arrivalAirport");
             Date arrivalTime = resultSet.getDate("arrival_Time");
             Flight flight = new Flight(id, departureAirport, departureTime, arrivalAirport, arrivalTime);
             System.out.println(flight);
@@ -53,9 +53,9 @@ public class AirportRepositoryImpl implements AirportRepository {
         while (resultSet.next()) {
 
             int id = resultSet.getInt("id");
-            int departureAirport = resultSet.getInt("depAirport");
+            String departureAirport = resultSet.getString("depAirport");
             Date departureTime = resultSet.getDate("departure_Time");
-            int arrivalAirport = resultSet.getInt("arrivalAirport");
+            String arrivalAirport = resultSet.getString("arrivalAirport");
             Date arrivalTime = resultSet.getDate("arrival_Time");
             Flight flight = new Flight(id, departureAirport, departureTime, arrivalAirport, arrivalTime);
             System.out.println(flight);

@@ -14,9 +14,9 @@ public class Flight {
 
 
     private int id;
-    private int departureAirport;
+    private String departureAirport;
     private Date departureTime;
-    private int arrivalAirport;
+    private String arrivalAirport;
     private Date arrivalTime;
 
 }

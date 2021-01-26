@@ -10,5 +10,5 @@ public interface AirportRepository {
 
     List<Flight> getFlightOfAirport(String airportName) throws SQLException;
     List<Flight> getFlightInAirports(String airportName) throws SQLException;
-    List<Airports> getIdAirports(String airportName)throws SQLException;
+    void  getIdAirports(String airportName)throws SQLException;
 }

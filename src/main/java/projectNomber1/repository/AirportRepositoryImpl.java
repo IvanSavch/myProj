@@ -13,7 +13,7 @@ public class AirportRepositoryImpl implements AirportRepository {
             "select f.id as 'id', f.aircraft_Number, f.departure_time, f.arrival_time, a_dep.id as 'depAirport', a_dep.airport_name, a_dep.city, a_dep.country, a_ar.id as 'arrivalAirport', a_ar.airport_name, a_ar.city, a_ar.country from flight f join airports a_dep on a_dep.id = f.departure_airport_id join airports a_ar on a_ar.id = f.arrival_airport_id where a_dep.airport_name = ?";
     private static final String GET_FLIGHTS_IN_AIRPORT =
             "select f.id as 'id', f.aircraft_Number, f.departure_time, f.arrival_time, a_dep.id as 'depAirport', a_dep.airport_name, a_dep.city, a_dep.country, a_ar.id as 'arrivalAirport', a_ar.airport_name, a_ar.city, a_ar.country from flight f join airports a_dep on a_dep.id = f.departure_airport_id join airports a_ar on a_ar.id = f.arrival_airport_id where a_ar.airport_name = ?";
-    private static final String GET_AIRPORT_ID = "select * from airports where airport_Name = ? ";
+    private static final String GET_AIRPORT_ID = "select id from airports where airport_Name = ? ";
 
     @Override
     public List<Flight> getFlightOfAirport(String airport_Name) throws SQLException {
@@ -66,8 +66,7 @@ public class AirportRepositoryImpl implements AirportRepository {
     }
 
     @Override
-    public List<Airports> getIdAirports(String airportName) throws SQLException {
-        List<Airports> airports = new ArrayList<>();
+    public void getIdAirports(String airportName) throws SQLException {
 
         Connection connection = ConnectionImpl.getConnection();
         PreparedStatement statement = connection.prepareStatement(GET_AIRPORT_ID);
@@ -75,15 +74,8 @@ public class AirportRepositoryImpl implements AirportRepository {
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
              int id = resultSet.getInt("id");
-            String name = resultSet.getString("airport_Name");
-            String city = resultSet.getString("city");
-            String country = resultSet.getString("country");
-            Airports airports1 = new Airports(id, name, city, country);
-            System.out.println(airports);
-            airports.add(airports1);
+            System.out.println(id);
         }
-        System.out.println(airports);
-        return airports;
     }
 }
 

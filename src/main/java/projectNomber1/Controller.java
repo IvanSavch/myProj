@@ -3,6 +3,7 @@ package projectNomber1;
 
 import projectNomber1.io.ConsoleIO;
 import projectNomber1.io.IOInterface;
+import projectNomber1.repository.AirportRepositoryImpl;
 import projectNomber1.service.AirportService;
 import projectNomber1.service.AirportsServiceImpl;
 import projectNomber1.service.FlightService;
@@ -50,6 +51,8 @@ public class Controller {
                         String departDate = ioInterface.readStringValue();
                         String arrivalAirportCode = ioInterface.readStringValue();
                         String arrivalDate = ioInterface.readStringValue();
+                        airportsService.getIdAirport(departAirportCode);
+                        airportsService.getIdAirport(arrivalAirportCode);
                         flightService.addFlight(departAirportCode, departDate, arrivalAirportCode, arrivalDate);
                         if (arrivalDate == null || departDate == null) {
                             System.out.println("введите дату ");

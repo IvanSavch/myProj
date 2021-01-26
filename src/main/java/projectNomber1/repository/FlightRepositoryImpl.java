@@ -7,8 +7,7 @@ import java.sql.SQLException;
 public class FlightRepositoryImpl implements FlightRepository {
 
     private static final String INSERT_FLIGHT =
-            "insert into flight (null,1,?,?,?,?)";
-    private static final String GET_AIRPORT_ID = "select id,airport_Name from airports";
+            "insert into flight values (null,1,?,?,?,?)";
 
     @Override
     public void addFlight(String departureAirport, String departureTime, String arrivalAirport, String arrivalTime) throws SQLException {
@@ -19,12 +18,6 @@ public class FlightRepositoryImpl implements FlightRepository {
         statement.setString(3, arrivalAirport);
         statement.setString(4, arrivalTime);
         statement.executeUpdate();
-        getIdAirports(departureAirport);
-        getIdAirports(arrivalAirport);
-    }
-
-    @Override
-    public void getIdAirports(String id) throws SQLException {
 
     }
 }

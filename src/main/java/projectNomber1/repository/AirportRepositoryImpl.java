@@ -66,16 +66,15 @@ public class AirportRepositoryImpl implements AirportRepository {
     }
 
     @Override
-    public void getIdAirports(String airportName) throws SQLException {
+    public int getIdAirports(String airportName) throws SQLException {
 
         Connection connection = ConnectionImpl.getConnection();
         PreparedStatement statement = connection.prepareStatement(GET_AIRPORT_ID);
         statement.setString(1, airportName);
         ResultSet resultSet = statement.executeQuery();
-        while (resultSet.next()) {
-             int id = resultSet.getInt("id");
-            System.out.println(id);
+         resultSet.next();
+            return resultSet.getInt("id");
         }
-    }
 }
+
 

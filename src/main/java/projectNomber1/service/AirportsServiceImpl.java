@@ -1,5 +1,6 @@
 package projectNomber1.service;
 
+import projectNomber1.model.Airports;
 import projectNomber1.repository.AirportRepository;
 import projectNomber1.repository.AirportRepositoryImpl;
 
@@ -26,7 +27,7 @@ public class AirportsServiceImpl implements AirportService {
     }
 
     @Override
-    public void getIdAirport(String airport) throws SQLException {
-        airportRepository.getIdAirports(airport);
+    public int getIdAirport(String airport) throws SQLException {
+        return airportRepository.getIdAirports(airport);
     }
 }

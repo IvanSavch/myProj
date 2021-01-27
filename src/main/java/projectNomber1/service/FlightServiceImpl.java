@@ -15,7 +15,7 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public void addFlight(String departureAirport, String departureTime, String arrivalAirport, String arrivalTime) throws SQLException {
-        flightRepository.addFlight(departureAirport,departureTime,arrivalAirport,arrivalTime);
+    public void addFlight(int departureAirport, String departureTime, int arrivalAirport, String arrivalTime) throws SQLException {
+        flightRepository.addFlight(departureAirport, departureTime,arrivalAirport,arrivalTime);
     }
 }

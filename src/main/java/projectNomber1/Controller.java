@@ -51,16 +51,15 @@ public class Controller {
                         String departDate = ioInterface.readStringValue();
                         String arrivalAirportCode = ioInterface.readStringValue();
                         String arrivalDate = ioInterface.readStringValue();
-                        airportsService.getIdAirport(departAirportCode);
-                        airportsService.getIdAirport(arrivalAirportCode);
-                        flightService.addFlight(departAirportCode, departDate, arrivalAirportCode, arrivalDate);
+                        int depAirCod = airportsService.getIdAirport(departAirportCode);
+                        int arrAirCode = airportsService.getIdAirport(arrivalAirportCode);
+                        flightService.addFlight(depAirCod, departDate, arrAirCode, arrivalDate);
                         if (arrivalDate == null || departDate == null) {
-                            System.out.println("введите дату ");
+                            System.out.println(" введите дату ");
                         }
                         if (departAirportCode == null || arrivalAirportCode == null) {
-                            System.out.println("введите код аэропорта ");
+                            System.out.println(" введите код аэропорта ");
                         }
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

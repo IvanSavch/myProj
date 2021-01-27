@@ -8,7 +8,6 @@ public interface IOInterface {
                     "\t1. extract\n" +
                     "\t2. select_flight_of_airports\n" +
                     "\t3. select_flight_in_airports\n" +
-                    "\t4. select_Id_airports\n" +
                     "\te. exit\n";
 
     String readStringValue() throws IOException;
